@@ -1,0 +1,123 @@
+/*Mixin*/
+@mixin logos($height){
+    height: $height;
+    background: $background;
+    animation: shade 0.5s ease;
+
+    @keyframes shade {
+        0%{
+            opacity:0;
+            scale: 90%
+        }
+        100%{
+            opacity: 1;
+            scale:100%
+        }
+    }
+}
+
+/*Grids por áreas*/
+.grid-container{
+    display: grid;
+    margin-top: 10px;
+    overflow-x: hidden;
+    text-align: center;
+    gap: 5px;
+
+    /*Declaración de áreas*/
+    grid-template:  "header" 100px
+                    "navigationbar" 100px
+                    "main" auto
+                    "sidebar" 100px
+                    "footer" 100px;
+    
+    /*Declaración de área de encabezado*/
+    .header{
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content:center;
+        resize: both;
+        grid-area: header;
+        background-color: $background;
+
+        /*Encabezado página principal*/
+        .logoLP{
+            @include logos(100%);
+        }
+
+        /*Encabezado logo*/
+        .logo{
+            @include logos(80%);
+        }
+
+    }
+
+    /*Declaración de área de barra de navegación*/
+    .navigationbar{
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content:center;
+        resize: both;
+        grid-area: navigationbar;
+    }
+
+    /*Declaración de área de texto principal*/
+    .main{
+        grid-area: main;
+        padding: 50px;
+
+        .mb-3{
+            background-color: $backgroundColor;
+        }
+    }
+
+    /*Declaración de área de texto lateral*/
+    .sidebar{
+        grid-area: sidebar;
+        padding: 50px;
+
+        /*Contenedor de referencias*/
+        .references{
+            background-color: $backgroundColor;
+            margin-top: 0px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-decoration: none;
+        }
+    }
+
+    /*Declaración de área de pie de página*/
+    .footer{
+        grid-area: footer;
+        margin: 5px;
+        display: flex;
+        background-color: $backgroundColor;
+
+        /*Texto en pie de página*/
+        .slogan{
+            padding-top: 0.3rem;
+            width: 40%;
+            height: 20%;
+            align-content: left;
+        }
+
+        /*Iconos ded pie de página*/
+        .icon{
+            padding-top: 4rem;
+            height: 50%;
+            display: flex;
+            margin-left: 1rem;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: end;
+            align-content: end;
+        }
+    }
+}
+
+
+

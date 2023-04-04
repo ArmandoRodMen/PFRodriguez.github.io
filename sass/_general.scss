@@ -1,0 +1,48 @@
+/*Armando Rodríguez-Mendoza*/
+
+/*Importar fuente*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@400;500;900&display=swap');
+
+/*Reset*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Diseño de cuerpo*/
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.2rem;
+    min-height: 100%;
+}
+
+/*Altura de html*/
+html{
+    height: 100%;
+}
+
+/*Altura y acomodo barra de navegación*/
+nav{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:center;
+    resize: both;
+    background-color: $backgroundColor;
+}
+
+/*Acomodo de link y badget de Bootstrap*/
+.nav-link{
+    margin: 4px;
+    justify-content: space-around;
+    align-content: space-around;
+    font-size: large;
+    }
+
+/*Color de links*/
+.nav__link--color{
+    color: $linkColor;
+    font-weight: bolder;
+    text-decoration: none;
+}

@@ -1,0 +1,326 @@
+@charset "UTF-8";
+/*Armando Rodríguez-Mendoza*/
+/*Importar fuente*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@400;500;900&display=swap");
+/*Reset*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*Diseño de cuerpo*/
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2.2rem;
+  min-height: 100%;
+}
+
+/*Altura de html*/
+html {
+  height: 100%;
+}
+
+/*Altura y acomodo barra de navegación*/
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  resize: both;
+  background-color: hwb(0 81% 19%);
+}
+
+/*Acomodo de link y badget de Bootstrap*/
+.nav-link {
+  margin: 4px;
+  justify-content: space-around;
+  align-content: space-around;
+  font-size: large;
+}
+
+/*Color de links*/
+.nav__link--color {
+  color: white;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+/*Mixin*/
+/*Grids por áreas*/
+.grid-container {
+  display: grid;
+  margin-top: 10px;
+  overflow-x: hidden;
+  text-align: center;
+  gap: 5px;
+  /*Declaración de áreas*/
+  grid-template: "header" 100px "navigationbar" 100px "main" auto "sidebar" 100px "footer" 100px;
+  /*Declaración de área de encabezado*/
+  /*Declaración de área de barra de navegación*/
+  /*Declaración de área de texto principal*/
+  /*Declaración de área de texto lateral*/
+  /*Declaración de área de pie de página*/
+}
+.grid-container .header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  resize: both;
+  grid-area: header;
+  background-color: white;
+  /*Encabezado página principal*/
+  /*Encabezado logo*/
+}
+.grid-container .header .logoLP {
+  height: 100%;
+  background: white;
+  animation: shade 0.5s ease;
+}
+@keyframes shade {
+  0% {
+    opacity: 0;
+    scale: 90%;
+  }
+  100% {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+.grid-container .header .logo {
+  height: 80%;
+  background: white;
+  animation: shade 0.5s ease;
+}
+@keyframes shade {
+  0% {
+    opacity: 0;
+    scale: 90%;
+  }
+  100% {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+.grid-container .navigationbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  resize: both;
+  grid-area: navigationbar;
+}
+.grid-container .main {
+  grid-area: main;
+  padding: 50px;
+}
+.grid-container .main .mb-3 {
+  background-color: hwb(0 81% 19%);
+}
+.grid-container .sidebar {
+  grid-area: sidebar;
+  padding: 50px;
+  /*Contenedor de referencias*/
+}
+.grid-container .sidebar .references {
+  background-color: hwb(0 81% 19%);
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-decoration: none;
+}
+.grid-container .footer {
+  grid-area: footer;
+  margin: 5px;
+  display: flex;
+  background-color: hwb(0 81% 19%);
+  /*Texto en pie de página*/
+  /*Iconos ded pie de página*/
+}
+.grid-container .footer .slogan {
+  padding-top: 0.3rem;
+  width: 40%;
+  height: 20%;
+  align-content: left;
+}
+.grid-container .footer .icon {
+  padding-top: 4rem;
+  height: 50%;
+  display: flex;
+  margin-left: 1rem;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: end;
+  align-content: end;
+}
+
+/*Diseño h1*/
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2.2rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: black;
+}
+
+/*Diseño h2*/
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  color: black;
+  margin-bottom: 2rem;
+}
+
+/*Diseño h3*/
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  color: black;
+  margin-top: 1rem;
+}
+
+/*Diseño h4*/
+h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 30;
+  color: black;
+}
+
+/*Diseño h5*/
+h5 {
+  font-family: "Roboto", sans-serif;
+  font-size: small;
+  text-align: right;
+  color: black;
+  margin-top: 0.5rem;
+}
+
+/*Diseño p*/
+p {
+  font-family: "Roboto", sans-serif;
+  margin-top: 1.2rem;
+  margin-left: 1rem;
+  margin-right: 1.2rem;
+  font-size: 1.2rem;
+  text-align: justify;
+  color: black;
+}
+
+/*Diseño ul y li listados*/
+ul li {
+  list-style-type: none;
+}
+
+/*Acomodo de contenedores de texto e imágenes*/
+.text-container, .images-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+}
+
+/*Contenedor y acomodo, y tamaño de video*/
+.video-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  /*Vídeo responsivo*/
+}
+.video-container .responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*Grids para galería*/
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  padding: 20px;
+  grid-gap: 10px;
+  /*Grids para galería en página de donaciones*/
+  /*Contenedor de imágenes*/
+  /*Items individuales de elementos de galería*/
+}
+.gallery-container .don {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 250px;
+  padding: 0px;
+  grid-gap: 10px;
+}
+.gallery-container .image {
+  border-radius: 5%;
+  transform: all 3s ease;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gallery-container .image:hover {
+  transform: scale(95%);
+  opacity: 80%;
+}
+.gallery-container .image:not(:hover) {
+  transform: scale(100%);
+}
+.gallery-container .item {
+  position: relative;
+  width: auto;
+}
+
+/*Media queries para móvil*/
+@media (min-width: 320px) {
+  .gallery-container {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+  }
+  img {
+    width: 90%;
+  }
+  .slogan {
+    font-size: small;
+  }
+  .grid-container {
+    grid-template: "header" 100px "navigationbar" 100px "main" auto "sidebar" auto "footer" 100px/100%;
+  }
+}
+/*Media queries para tablet*/
+@media (min-width: 760px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  img {
+    width: 90%;
+  }
+  .slogan {
+    font-size: medium;
+  }
+  .grid-container {
+    grid-template: "header" 120px "navigationbar" 100px "main" auto "sidebar" auto "footer" 80px/100%;
+  }
+}
+/*Media queries para laptop*/
+@media (min-width: 1000px) {
+  .gallery-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-container {
+    grid-template: "header" 150px "navigationbar" 100px "main" auto "sidebar" auto "footer" 100px/100%;
+  }
+}
+/*Fin de código*//*# sourceMappingURL=sass.css.map */
