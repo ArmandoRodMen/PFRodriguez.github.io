@@ -156,8 +156,8 @@ nav .link-color {
   align-content: left;
 }
 .grid-container .footer .icon {
-  padding-top: 4rem;
-  height: 50%;
+  padding-top: 1rem;
+  height: 60%;
   display: flex;
   margin-left: 1rem;
   flex-wrap: wrap;
