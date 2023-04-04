@@ -107,6 +107,15 @@
 
         /*Iconos ded pie de página*/
         .icon{
+
+            &:hover{
+                transform: scale(90%);
+                opacity: 90%;
+            }
+            &:not(:hover){
+                transform: scale(100%);
+            }
+            
             padding-top: 4rem;
             height: 50%;
             display: flex;

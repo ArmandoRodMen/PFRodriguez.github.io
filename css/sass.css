@@ -30,6 +30,9 @@ nav {
   resize: both;
   background-color: hwb(0 81% 19%);
 }
+nav .link-color {
+  color: white;
+}
 
 /*Acomodo de link y badget de Bootstrap*/
 .nav-link {
@@ -39,11 +42,17 @@ nav {
   font-size: large;
 }
 
-/*Color de links*/
-.nav__link--color {
-  color: white;
+.btn-primary, .btn-primary:active, .btn-primary:visited {
+  background-color: #075d76;
+  border-color: white;
   font-weight: bolder;
-  text-decoration: none;
+}
+.btn-primary:hover, .btn-primary:active:hover, .btn-primary:visited:hover {
+  background-color: white;
+  border-color: #075d76;
+}
+.btn-primary:hover .link-color, .btn-primary:active:hover .link-color, .btn-primary:visited:hover .link-color {
+  color: #075d76;
 }
 
 /*Mixin*/
@@ -156,6 +165,13 @@ nav {
   justify-content: end;
   align-content: end;
 }
+.grid-container .footer .icon:hover {
+  transform: scale(90%);
+  opacity: 90%;
+}
+.grid-container .footer .icon:not(:hover) {
+  transform: scale(100%);
+}
 
 /*Diseño h1*/
 h1 {
@@ -212,6 +228,14 @@ p {
 /*Diseño ul y li listados*/
 ul li {
   list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #075d76;
+}
+a:hover {
+  color: #fb6800;
 }
 
 /*Acomodo de contenedores de texto e imágenes*/

@@ -30,6 +30,10 @@ nav{
     justify-content:center;
     resize: both;
     background-color: $backgroundColor;
+
+    .link-color{
+        color:$background;
+    }
 }
 
 /*Acomodo de link y badget de Bootstrap*/
@@ -38,11 +42,17 @@ nav{
     justify-content: space-around;
     align-content: space-around;
     font-size: large;
-    }
+}
 
-/*Color de links*/
-.nav__link--color{
-    color: $linkColor;
+.btn-primary, .btn-primary:active, .btn-primary:visited {
+    background-color: $btn;
+    border-color: $background;
     font-weight: bolder;
-    text-decoration: none;
+    &:hover{
+        background-color: $background;
+        border-color: $btn;
+        .link-color{
+            color:$btn;
+        }
+    }
 }
