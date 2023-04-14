@@ -1,5 +1,8 @@
 @charset "UTF-8";
-/*Armando Rodríguez-Mendoza*/
+/*Variables globales de color*/
+/*Variables globales de unidades*/
+/*Fin de código*/
+/*Variable loacl de opacidad y gradiente*/
 /*Importar fuente*/
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@400;500;900&display=swap");
 /*Reset*/
@@ -11,9 +14,8 @@
 
 /*Diseño de cuerpo*/
 body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 2.2rem;
   min-height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.968627451), rgba(255, 255, 255, 0.968627451)), url(../media/BodyBG.jpg);
 }
 
 /*Altura de html*/
@@ -28,20 +30,21 @@ nav {
   align-items: center;
   justify-content: center;
   resize: both;
-  background-color: hwb(0 81% 19%);
+  background-color: #cfcfcf;
 }
 nav .link-color {
   color: white;
 }
 
-/*Acomodo de link y badget de Bootstrap*/
+/*Acomodo de link Bootstrap*/
 .nav-link {
-  margin: 4px;
+  margin: 0.5rem;
   justify-content: space-around;
   align-content: space-around;
   font-size: large;
 }
 
+/*Botón Bootstrap*/
 .btn-primary, .btn-primary:active, .btn-primary:visited {
   background-color: #075d76;
   border-color: white;
@@ -55,14 +58,14 @@ nav .link-color {
   color: #075d76;
 }
 
-/*Mixin*/
+/*Fin de código*/
+/*Variables locales*/
+/*Mixin input height output animación*/
 /*Grids por áreas*/
 .grid-container {
   display: grid;
-  margin-top: 10px;
   overflow-x: hidden;
   text-align: center;
-  gap: 5px;
   /*Declaración de áreas*/
   grid-template: "header" 100px "navigationbar" 100px "main" auto "sidebar" 100px "footer" 100px;
   /*Declaración de área de encabezado*/
@@ -83,9 +86,10 @@ nav .link-color {
   /*Encabezado logo*/
 }
 .grid-container .header .logoLP {
-  height: 100%;
-  background: white;
-  animation: shade 0.5s ease;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  height: 90%;
+  animation: shade 0.5s ease-in-out;
 }
 @keyframes shade {
   0% {
@@ -98,9 +102,8 @@ nav .link-color {
   }
 }
 .grid-container .header .logo {
-  height: 80%;
-  background: white;
-  animation: shade 0.5s ease;
+  height: 75%;
+  animation: shade 0.5s ease-in-out;
 }
 @keyframes shade {
   0% {
@@ -122,32 +125,41 @@ nav .link-color {
 }
 .grid-container .main {
   grid-area: main;
-  padding: 50px;
+  padding: 3rem;
 }
-.grid-container .main .mb-3 {
-  background-color: hwb(0 81% 19%);
+.grid-container .main .landing, .grid-container .main .mb-3 {
+  border-radius: 2%;
+  min-height: 100%;
+  background: linear-gradient(rgba(250, 255, 253, 0.9), rgb(250, 255, 253)), url(../media/MichiFondo.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.grid-container .main .landing .form-control, .grid-container .main .mb-3 .form-control {
+  background: linear-gradient(rgba(250, 255, 253, 0.98), rgb(250, 255, 253)), url(../media/MichiFondo.png);
 }
 .grid-container .sidebar {
   grid-area: sidebar;
-  padding: 50px;
+  padding: 3rem;
   /*Contenedor de referencias*/
 }
 .grid-container .sidebar .references {
-  background-color: hwb(0 81% 19%);
-  margin-top: 0px;
+  background-color: #cfcfcf;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   text-decoration: none;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .grid-container .footer {
   grid-area: footer;
-  margin: 5px;
   display: flex;
-  background-color: hwb(0 81% 19%);
+  background-color: #cfcfcf;
   /*Texto en pie de página*/
-  /*Iconos ded pie de página*/
+  /*Iconos ded pie de página, mouse responsive*/
 }
 .grid-container .footer .slogan {
   padding-top: 0.3rem;
@@ -157,9 +169,10 @@ nav .link-color {
 }
 .grid-container .footer .icon {
   padding-top: 1rem;
+  padding-right: 0.5rem;
   height: 60%;
   display: flex;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: end;
@@ -167,62 +180,75 @@ nav .link-color {
 }
 .grid-container .footer .icon:hover {
   transform: scale(90%);
-  opacity: 90%;
+  filter: opacity(50%);
 }
 .grid-container .footer .icon:not(:hover) {
   transform: scale(100%);
 }
 
+/*Fin de código*/
 /*Diseño h1*/
 h1 {
   font-family: "Roboto", sans-serif;
-  font-size: 2.2rem;
-  margin-top: 1rem;
   text-align: center;
-  color: black;
+  color: #fa6800;
+  margin-top: 2.3rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 /*Diseño h2*/
 h2 {
   font-family: "Roboto", sans-serif;
-  font-size: 1.3rem;
-  color: black;
+  color: #075d76;
   margin-bottom: 2rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 /*Diseño h3*/
 h3 {
   font-family: "Roboto", sans-serif;
-  font-size: 1.3rem;
-  color: black;
-  margin-top: 1rem;
+  font-size: 1.8rem;
+  color: #075d76;
+  margin-top: 2rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 /*Diseño h4*/
 h4 {
   font-family: "Roboto", sans-serif;
-  font-size: 30;
-  color: black;
+  font-size: 1.5rem;
+  color: #075d76;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  text-align: center;
+  width: 95%;
 }
 
 /*Diseño h5*/
 h5 {
   font-family: "Roboto", sans-serif;
-  font-size: small;
+  font-size: 1rem;
   text-align: right;
   color: black;
+  width: 95%;
   margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 /*Diseño p*/
 p {
   font-family: "Roboto", sans-serif;
-  margin-top: 1.2rem;
-  margin-left: 1rem;
-  margin-right: 1.2rem;
-  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
   text-align: justify;
   color: black;
+  width: 90%;
 }
 
 /*Diseño ul y li listados*/
@@ -235,7 +261,7 @@ a {
   color: #075d76;
 }
 a:hover {
-  color: #fb6800;
+  color: #fa6800;
 }
 
 /*Acomodo de contenedores de texto e imágenes*/
@@ -245,8 +271,10 @@ a:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-content: space-around;
+  margin: 1rem;
 }
 
+/*Fin de código*/
 /*Contenedor y acomodo, y tamaño de video*/
 .video-container {
   display: flex;
@@ -288,6 +316,9 @@ a:hover {
 }
 .gallery-container .image {
   border-radius: 5%;
+  border-style: solid;
+  border-radius: 1rem;
+  border-color: #075d76;
   transform: all 3s ease;
   width: 100%;
   height: 100%;
@@ -296,7 +327,8 @@ a:hover {
 }
 .gallery-container .image:hover {
   transform: scale(95%);
-  opacity: 80%;
+  filter: opacity(80%);
+  border-color: #fa6800;
 }
 .gallery-container .image:not(:hover) {
   transform: scale(100%);
@@ -306,11 +338,27 @@ a:hover {
   width: auto;
 }
 
+/*Fin de código*/
 /*Media queries para móvil*/
 @media (min-width: 320px) {
   .gallery-container {
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  h5 {
+    font-size: 0.8rem;
+  }
+  p {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 16px;
+    text-align: start;
   }
   img {
     width: 90%;
@@ -324,6 +372,18 @@ a:hover {
 }
 /*Media queries para tablet*/
 @media (min-width: 760px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  p {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    font-size: 16px;
+    text-align: start;
+  }
   .gallery-container {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
@@ -335,11 +395,18 @@ a:hover {
     font-size: medium;
   }
   .grid-container {
-    grid-template: "header" 120px "navigationbar" 100px "main" auto "sidebar" auto "footer" 80px/100%;
+    grid-template: "header" 120px "navigationbar" 100px "main" auto "sidebar" auto "footer" 90px/100%;
   }
 }
 /*Media queries para laptop*/
 @media (min-width: 1000px) {
+  h1 {
+    font-size: 5rem;
+  }
+  p {
+    text-align: start;
+    font-size: 20px;
+  }
   .gallery-container {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -347,4 +414,5 @@ a:hover {
     grid-template: "header" 150px "navigationbar" 100px "main" auto "sidebar" auto "footer" 100px/100%;
   }
 }
+/*Fin de código*/
 /*Fin de código*//*# sourceMappingURL=sass.css.map */

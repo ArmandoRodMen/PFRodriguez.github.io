@@ -1,9 +1,14 @@
 
-/*Mixin*/
+/*Variables locales*/
+$r: 250;
+$g: 255;
+$b: 253;
+$a: 0.9;
+
+/*Mixin input height output animación*/
 @mixin logos($height){
     height: $height;
-    background: $background;
-    animation: shade 0.5s ease;
+    animation: shade 0.5s ease-in-out;
 
     @keyframes shade {
         0%{
@@ -20,10 +25,8 @@
 /*Grids por áreas*/
 .grid-container{
     display: grid;
-    margin-top: 10px;
     overflow-x: hidden;
     text-align: center;
-    gap: 5px;
 
     /*Declaración de áreas*/
     grid-template:  "header" 100px
@@ -44,12 +47,14 @@
 
         /*Encabezado página principal*/
         .logoLP{
-            @include logos(100%);
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+            @include logos(90%);
         }
 
         /*Encabezado logo*/
         .logo{
-            @include logos(80%);
+            @include logos(75%);
         }
 
     }
@@ -67,34 +72,43 @@
     /*Declaración de área de texto principal*/
     .main{
         grid-area: main;
-        padding: 50px;
-
-        .mb-3{
-            background-color: $backgroundColor;
+        padding: 3rem;
+        .landing,.mb-3{
+            border-radius: 2%;
+            min-height: 100%;
+            background: linear-gradient(rgba($r,$g,$b,$a), rgba($r,$g,$b,1)),
+            url(../media/MichiFondo.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            .form-control{
+                background: linear-gradient(rgba($r,$g,$b,0.98), rgba($r,$g,$b,1)),
+                url(../media/MichiFondo.png);
+            }
         }
     }
 
     /*Declaración de área de texto lateral*/
     .sidebar{
         grid-area: sidebar;
-        padding: 50px;
-
+        padding: 3rem;
         /*Contenedor de referencias*/
         .references{
             background-color: $backgroundColor;
-            margin-top: 0px;
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             justify-content: center;
             text-decoration: none;
+            margin-left: $marginReferences;
+            margin-right: $marginReferences;
         }
     }
 
     /*Declaración de área de pie de página*/
     .footer{
         grid-area: footer;
-        margin: 5px;
         display: flex;
         background-color: $backgroundColor;
 
@@ -106,19 +120,20 @@
             align-content: left;
         }
 
-        /*Iconos ded pie de página*/
+        /*Iconos ded pie de página, mouse responsive*/
         .icon{
             &:hover{
                 transform: scale(90%);
-                opacity: 90%;
+                filter: opacity(50%);
             }
             &:not(:hover){
                 transform: scale(100%);
             }
             padding-top: 1rem;
+            padding-right: 0.5rem;
             height: 60%;
             display: flex;
-            margin-left: 1rem;
+            margin-left: $marginReferences;
             flex-wrap: wrap;
             flex-direction: row;
             justify-content: end;
@@ -127,5 +142,6 @@
     }
 }
 
+/*Fin de código*/
 
 

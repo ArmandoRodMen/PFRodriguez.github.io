@@ -1,4 +1,6 @@
-/*Armando Rodríguez-Mendoza*/
+
+/*Variable loacl de opacidad y gradiente*/
+$opacityGradien: #fffffff7;
 
 /*Importar fuente*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@400;500;900&display=swap');
@@ -12,9 +14,8 @@
 
 /*Diseño de cuerpo*/
 body{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 2.2rem;
     min-height: 100%;
+    background: linear-gradient($opacityGradien, $opacityGradien), url(../media/BodyBG.jpg);
 }
 
 /*Altura de html*/
@@ -36,14 +37,15 @@ nav{
     }
 }
 
-/*Acomodo de link y badget de Bootstrap*/
+/*Acomodo de link Bootstrap*/
 .nav-link{
-    margin: 4px;
+    margin: 0.5rem;
     justify-content: space-around;
     align-content: space-around;
     font-size: large;
 }
 
+/*Botón Bootstrap*/
 .btn-primary, .btn-primary:active, .btn-primary:visited {
     background-color: $btn;
     border-color: $background;
@@ -56,3 +58,5 @@ nav{
         }
     }
 }
+
+/*Fin de código*/
