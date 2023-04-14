@@ -4,6 +4,8 @@ $r: 250;
 $g: 255;
 $b: 253;
 $a: 0.9;
+$shaderStart: 255, 255, 255, 1;
+$shaderEnd: 255, 255, 255, 0;
 
 /*Mixin input height output animación*/
 @mixin logos($height){
@@ -64,12 +66,12 @@ $a: 0.9;
 
     .marginR{
         grid-area: marginR;
-        background: linear-gradient(270deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+        background: linear-gradient(270deg, rgba($shaderStart), rgba($shaderEnd));
     }
 
     .marginL{
         grid-area: marginL;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+        background: linear-gradient(90deg, rgba($shaderStart), rgba($shaderEnd));
     }
 
     /*Declaración de área de texto principal*/
