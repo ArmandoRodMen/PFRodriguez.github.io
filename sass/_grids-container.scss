@@ -27,13 +27,6 @@ $a: 0.9;
     display: grid;
     overflow-x: hidden;
     text-align: center;
-
-    /*Declaración de áreas*/
-    grid-template:  "header" 100px
-                    "navigationbar" 100px
-                    "main" auto
-                    "sidebar" 100px
-                    "footer" 100px;
     
     /*Declaración de área de encabezado*/
     .header{
@@ -67,6 +60,16 @@ $a: 0.9;
         justify-content:center;
         resize: both;
         grid-area: navigationbar;
+    }
+
+    .marginR{
+        grid-area: marginR;
+        background: linear-gradient(270deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    }
+
+    .marginL{
+        grid-area: marginL;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
     }
 
     /*Declaración de área de texto principal*/

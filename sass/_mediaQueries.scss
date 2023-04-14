@@ -9,21 +9,21 @@
         font-size: 2rem;
     }
     h2{
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     h3{
-        font-size: 0.9rem;
+        font-size: 1.4rem;
     }
     h4{
-        font-size: 0.8rem;
+        font-size: 1.3rem;
     }
     h5{
-        font-size: 0.7rem;
+        font-size: 1rem;
     }
     p{
+        font-size: 1rem;
         margin-left: $marginReferences;
         margin-right: $marginReferences;
-        font-size: 16px;
         text-align:start;
     }
     img{
@@ -73,7 +73,7 @@
             "navigationbar" 100px
             "main" auto
             "sidebar" auto
-            "footer" 90px /
+            "footer" 100px /
             100%;
     }
 }
@@ -92,12 +92,25 @@
     }
     .grid-container{
         grid-template:
-            "header" 150px
-            "navigationbar" 100px
-            "main" auto
-            "sidebar" auto
-            "footer" 100px /
-            100%;
+            "header header header" 150px
+            "navigationbar navigationbar navigationbar" 100px
+            "marginL main marginR" auto
+            "marginL sidebar marginR" auto
+            "footer footer footer" 100px /
+            10% auto 10%;
+    }
+}
+
+/*Media queries para laptop*/
+@media (min-width: 1500px){
+    .grid-container{
+        grid-template:
+            "header header header" 180px
+            "navigationbar navigationbar navigationbar" 120px
+            "marginL main marginR" auto
+            "marginL sidebar marginR" auto
+            "footer footer footer" 120px /
+            20% auto 20%;
     }
 }
 

@@ -66,8 +66,6 @@ nav .link-color {
   display: grid;
   overflow-x: hidden;
   text-align: center;
-  /*Declaración de áreas*/
-  grid-template: "header" 100px "navigationbar" 100px "main" auto "sidebar" 100px "footer" 100px;
   /*Declaración de área de encabezado*/
   /*Declaración de área de barra de navegación*/
   /*Declaración de área de texto principal*/
@@ -122,6 +120,14 @@ nav .link-color {
   justify-content: center;
   resize: both;
   grid-area: navigationbar;
+}
+.grid-container .marginR {
+  grid-area: marginR;
+  background: linear-gradient(270deg, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+}
+.grid-container .marginL {
+  grid-area: marginL;
+  background: linear-gradient(90deg, rgb(255, 255, 255), rgba(255, 255, 255, 0));
 }
 .grid-container .main {
   grid-area: main;
@@ -231,11 +237,10 @@ h4 {
 /*Diseño h5*/
 h5 {
   font-family: "Roboto", sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: right;
   color: black;
   width: 95%;
-  margin-top: 0.5rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
@@ -266,12 +271,12 @@ a:hover {
 
 /*Acomodo de contenedores de texto e imágenes*/
 .text-container, .images-container {
-  display: flex;
+  display: inline-block;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: space-around;
-  margin: 1rem;
+  align-content: center;
+  margin: auto;
 }
 
 /*Fin de código*/
@@ -349,21 +354,21 @@ a:hover {
     font-size: 2rem;
   }
   h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   h3 {
-    font-size: 0.9rem;
+    font-size: 1.4rem;
   }
   h4 {
-    font-size: 0.8rem;
+    font-size: 1.3rem;
   }
   h5 {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
   p {
+    font-size: 1rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    font-size: 16px;
     text-align: start;
   }
   img {
@@ -401,7 +406,7 @@ a:hover {
     font-size: medium;
   }
   .grid-container {
-    grid-template: "header" 120px "navigationbar" 100px "main" auto "sidebar" auto "footer" 90px/100%;
+    grid-template: "header" 120px "navigationbar" 100px "main" auto "sidebar" auto "footer" 100px/100%;
   }
 }
 /*Media queries para laptop*/
@@ -417,7 +422,13 @@ a:hover {
     grid-template-columns: repeat(3, 1fr);
   }
   .grid-container {
-    grid-template: "header" 150px "navigationbar" 100px "main" auto "sidebar" auto "footer" 100px/100%;
+    grid-template: "header header header" 150px "navigationbar navigationbar navigationbar" 100px "marginL main marginR" auto "marginL sidebar marginR" auto "footer footer footer" 100px/10% auto 10%;
+  }
+}
+/*Media queries para laptop*/
+@media (min-width: 1500px) {
+  .grid-container {
+    grid-template: "header header header" 180px "navigationbar navigationbar navigationbar" 120px "marginL main marginR" auto "marginL sidebar marginR" auto "footer footer footer" 120px/20% auto 20%;
   }
 }
 /*Fin de código*/
